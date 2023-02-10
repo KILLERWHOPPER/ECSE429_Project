@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 10-Feb-2023 at 02:00:40 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 10-Feb-2023 at 04:05:38 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,8 +269,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.5</td></tr></table>
     <h2>Summary</h2>
-    <p>5 tests ran in 0.50 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>6 tests ran in 0.56 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">6 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -281,52 +281,124 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
+      <tbody class="passed results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_todo_get.py::TestTodoGet::test_get_by_title_multi</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete</td>
+          <td class="col-duration">0.08</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_todo_get.TestTodoGet object at 0x00000177F6E8E320&gt;<br/><br/>    def test_get_by_title_multi(self):<br/>        request = requests.get(url=home + api_path + &quot;?title=Test4&quot;)<br/>        response = request.json()<br/>    <br/>        status_code = request.status_code<br/>        print(response)<br/>        assert status_code == 200<br/>        todos = response[&quot;todos&quot;]<br/>        assert todos[0][&quot;title&quot;] == &quot;Test4&quot;<br/>&gt;       assert todos[0][&quot;doneStatus&quot;] == &quot;true&quot;<br/><span class="error">E       AssertionError: assert &#x27;false&#x27; == &#x27;true&#x27;</span><br/><span class="error">E         - true</span><br/><span class="error">E         + false</span><br/><br/>test_todo_get.py:62: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;todos&#x27;: [{&#x27;id&#x27;: &#x27;44&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, {&#x27;id&#x27;: &#x27;28&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, {&#x27;id&#x27;: &#x27;43&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, {&#x27;id&#x27;: &#x27;24&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, {&#x27;id&#x27;: &#x27;38&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, {&#x27;id&#x27;: &#x27;39&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, {&#x27;id&#x27;: &#x27;18&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, {&#x27;id&#x27;: &#x27;23&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, {&#x27;id&#x27;: &#x27;19&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, {&#x27;id&#x27;: &#x27;33&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, {&#x27;id&#x27;: &#x27;34&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}]}
-<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_todo_get.py::TestTodoGet::test_get_by_id</td>
-          <td class="col-duration">0.06</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_todo_get.TestTodoGet object at 0x00000177F6E8E470&gt;<br/><br/>    def test_get_by_id (self):<br/>        request = requests.get(url=home+api_path+&quot;?id=12&quot;)<br/>        response=request.json()<br/>    <br/>        status_code=request.status_code<br/>        print(response)<br/>        assert status_code == 200<br/>        todos=response[&quot;todos&quot;]<br/>&gt;       assert todos[0][&quot;title&quot;]==&quot;TestTitleByID&quot;<br/><span class="error">E       IndexError: list index out of range</span><br/><br/>test_todo_get.py:76: IndexError<br/> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;todos&#x27;: []}
+            <div class="log"> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 523, status code: 200
+delete todo with id: 525, status code: 200
+delete todo with id: 524, status code: 200
+delete todo with id: 526, status code: 200
+=================================================
+
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_todo_delete.py::TestTodoDelete::test_delete</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_all</td>
+          <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_todo_get.py::TestTodoGet::test_get_by_title</td>
-          <td class="col-duration">0.06</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;todos&#x27;: [{&#x27;id&#x27;: &#x27;30&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, {&#x27;id&#x27;: &#x27;35&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, {&#x27;id&#x27;: &#x27;25&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, {&#x27;id&#x27;: &#x27;20&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, {&#x27;id&#x27;: &#x27;15&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}]}
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+{&#x27;id&#x27;: &#x27;528&#x27;, &#x27;title&#x27;: &#x27;Test2&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;second todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;527&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;531&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;529&#x27;, &#x27;title&#x27;: &#x27;Test3&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;third todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;530&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 528, status code: 200
+delete todo with id: 527, status code: 200
+delete todo with id: 531, status code: 200
+delete todo with id: 529, status code: 200
+delete todo with id: 530, status code: 200
+=================================================
+
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_todo_post.py::TestTodoPost::test_post</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_title</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>n/
+[{&#x27;id&#x27;: &#x27;532&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}], status code: 200
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 534, status code: 200
+delete todo with id: 536, status code: 200
+delete todo with id: 532, status code: 200
+delete todo with id: 535, status code: 200
+delete todo with id: 533, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_title_multi</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+{&#x27;id&#x27;: &#x27;540&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;541&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 540, status code: 200
+delete todo with id: 539, status code: 200
+delete todo with id: 538, status code: 200
+delete todo with id: 541, status code: 200
+delete todo with id: 537, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_id</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;id&#x27;: &#x27;542&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 544, status code: 200
+delete todo with id: 545, status code: 200
+delete todo with id: 546, status code: 200
+delete todo with id: 543, status code: 200
+delete todo with id: 542, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post</td>
+          <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>&lt;Response [201]&gt;
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 548, status code: 200
+delete todo with id: 547, status code: 200
+delete todo with id: 551, status code: 200
+delete todo with id: 550, status code: 200
+delete todo with id: 552, status code: 200
+delete todo with id: 549, status code: 200
+=================================================
+
 <br/></div></td></tr></tbody></table></body></html>
