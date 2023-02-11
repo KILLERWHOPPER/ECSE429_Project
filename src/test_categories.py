@@ -164,7 +164,8 @@ class TestCategoriesGet:
         new_title = "new_title"
         response = requests.get(url + f"?title={new_title}")
         request_data = response.json().get("categories")
-        assert response.status_code == 404
+        status_code = response.status_code
+        assert status_code == 404
         assert len(request_data) == 0
     
     def test_get_category_by_description(self):
@@ -202,7 +203,8 @@ class TestCategoriesGet:
         get_response = requests.get(url + f"/999")
         assert get_response.status_code == 404
         response = requests.head(url + f"/999")
-        assert response.headers.get("Content-Type") is None
+        header_content_type = response.headers.get("Content-Type")
+        assert header_content_type is None
 
     def test_head_category_by_title_and_description(self):
         new_title = "new_title"
