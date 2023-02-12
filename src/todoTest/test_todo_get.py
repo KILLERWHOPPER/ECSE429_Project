@@ -99,7 +99,7 @@ class TestTodoGet:
         assert todos[0]["doneStatus"] == "false"
         assert todos[0]["description"] == "first todo"
 
-    def test_get_by_taskof(self):
+    def test_get_taskof(self):
         id = requests.get(url=home + api_path + "?title=scan paperwork").json()["todos"][0]["id"]
         request = requests.get(url=home+api_path+"/"+format(id)+"/tasksof")
         status_code=request.status_code
@@ -111,7 +111,7 @@ class TestTodoGet:
         assert received["completed"]=="false"
         assert received["active"]=="false"
 
-    def test_get_by_categories(self):
+    def test_get_categories(self):
         id = requests.get(url=home + api_path + "?title=scan paperwork").json()["todos"][0]["id"]
         request = requests.get(url=home + api_path + "/" + format(id) + "/categories")
         status_code = request.status_code
@@ -133,3 +133,9 @@ class TestTodoGet:
 
         assert request.status_code==200
         assert len(request.json()["todos"])==0
+
+    def test_get_taskof_todo_non_exist(self):
+        request = requests.get(url=home + api_path + "/114514/tasksof")
+
+        assert request.status_code == 404
+        assert request.json()["errorMessages"][0] == "Could not find an instance with todos/114514"
