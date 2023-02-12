@@ -1,5 +1,5 @@
 Test were written with Python 3.10+
-The test report is generated using pytest-html and can be found [here to view the results](https://htmlpreview.github.io/?https://github.com/KILLERWHOPPER/ECSE429_Project/blob/master/res/report.html) and [here to view source file](res/report.html).
+The test report is generated using pytest-html and can be found [here](https://htmlpreview.github.io/?https://github.com/KILLERWHOPPER/ECSE429_Project/blob/master/res/report.html).
 
 To run the tests locally, run the following commands (powershell):
 ```powershell
