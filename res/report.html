@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 11-Feb-2023 at 04:06:23 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 12-Feb-2023 at 00:39:34 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -455,8 +455,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.6</td></tr></table>
     <h2>Summary</h2>
-    <p>35 tests ran in 2.23 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">33 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>56 tests ran in 3.50 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">53 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -471,11 +471,11 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_title_not_found</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x000002DBC1CA7A60&gt;<br/><br/>    def test_get_category_by_title_not_found(self):<br/>        new_title = &quot;new_title&quot;<br/>        response = requests.get(url + f&quot;?title={new_title}&quot;)<br/>        request_data = response.json().get(&quot;categories&quot;)<br/>&gt;       assert response.status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>src\test_categories.py:167: AssertionError<br/></div></td></tr></tbody>
+            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x000001DD37A37B80&gt;<br/><br/>    def test_get_category_by_title_not_found(self):<br/>        new_title = &quot;new_title&quot;<br/>        response = requests.get(url + f&quot;?title={new_title}&quot;)<br/>        request_data = response.json().get(&quot;categories&quot;)<br/>        status_code = response.status_code<br/>&gt;       assert status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><br/>src\test_categories.py:168: AssertionError<br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
@@ -484,23 +484,32 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x000002DBC1CA7FA0&gt;<br/><br/>    def test_head_category_by_id_non_existing(self):<br/>        get_response = requests.get(url + f&quot;/999&quot;)<br/>        assert get_response.status_code == 404<br/>        response = requests.head(url + f&quot;/999&quot;)<br/>&gt;       assert response.headers.get(&quot;Content-Type&quot;) is None<br/><span class="error">E       AssertionError: assert &#x27;application/json&#x27; is None</span><br/><span class="error">E        +  where &#x27;application/json&#x27; = &lt;bound method Mapping.get of {&#x27;Date&#x27;: &#x27;Sat, 11 Feb 2023 09:06:22 GMT&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Transfer-Encoding&#x27;: &#x27;chunked&#x27;, &#x27;Server&#x27;: &#x27;Jetty(9.4.z-SNAPSHOT)&#x27;}&gt;(&#x27;Content-Type&#x27;)</span><br/><span class="error">E        +    where &lt;bound method Mapping.get of {&#x27;Date&#x27;: &#x27;Sat, 11 Feb 2023 09:06:22 GMT&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Transfer-Encoding&#x27;: &#x27;chunked&#x27;, &#x27;Server&#x27;: &#x27;Jetty(9.4.z-SNAPSHOT)&#x27;}&gt; = {&#x27;Date&#x27;: &#x27;Sat, 11 Feb 2023 09:06:22 GMT&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Transfer-Encoding&#x27;: &#x27;chunked&#x27;, &#x27;Server&#x27;: &#x27;Jetty(9.4.z-SNAPSHOT)&#x27;}.get</span><br/><span class="error">E        +      where {&#x27;Date&#x27;: &#x27;Sat, 11 Feb 2023 09:06:22 GMT&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Transfer-Encoding&#x27;: &#x27;chunked&#x27;, &#x27;Server&#x27;: &#x27;Jetty(9.4.z-SNAPSHOT)&#x27;} = &lt;Response [404]&gt;.headers</span><br/><br/>src\test_categories.py:205: AssertionError<br/></div></td></tr></tbody>
+            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x000001DD37A74100&gt;<br/><br/>    def test_head_category_by_id_non_existing(self):<br/>        get_response = requests.get(url + f&quot;/999&quot;)<br/>        assert get_response.status_code == 404<br/>        response = requests.head(url + f&quot;/999&quot;)<br/>        header_content_type = response.headers.get(&quot;Content-Type&quot;)<br/>&gt;       assert header_content_type is None<br/><span class="error">E       AssertionError: assert &#x27;application/json&#x27; is None</span><br/><br/>src\test_categories.py:207: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_create_project_documented_fail</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_projects.TestCategoriesGet object at 0x000001DD37A74A00&gt;<br/><br/>    def test_create_project_documented_fail(self):<br/>        # The json data formatting is the one shown in the documentation<br/>        data = {<br/>            &quot;title&quot;: &quot;epteur sint occaecat&quot;,<br/>            &quot;completed&quot;: &quot;true&quot;,<br/>            &quot;active&quot;: &quot;true&quot;,<br/>            &quot;description&quot;: &quot;e magna aliqua. Ut e&quot;<br/>        }<br/>        response = requests.post(url, json=data)<br/>        request_data = response.json()<br/>&gt;       assert response.status_code == 201<br/><span class="error">E       assert 400 == 201</span><br/><span class="error">E        +  where 400 = &lt;Response [400]&gt;.status_code</span><br/><br/>src\test_projects.py:41: AssertionError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_all</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&quot;categories&quot;:[{&quot;id&quot;:&quot;5055&quot;,&quot;title&quot;:&quot;title2&quot;,&quot;description&quot;:&quot;description2&quot;},{&quot;id&quot;:&quot;5057&quot;,&quot;title&quot;:&quot;title4&quot;,&quot;description&quot;:&quot;description4&quot;},{&quot;id&quot;:&quot;5058&quot;,&quot;title&quot;:&quot;title5&quot;,&quot;description&quot;:&quot;description5&quot;},{&quot;id&quot;:&quot;5056&quot;,&quot;title&quot;:&quot;title3&quot;,&quot;description&quot;:&quot;description3&quot;},{&quot;id&quot;:&quot;5054&quot;,&quot;title&quot;:&quot;title1&quot;,&quot;description&quot;:&quot;description1&quot;}]}
-{&#x27;categories&#x27;: [{&#x27;id&#x27;: &#x27;5055&#x27;, &#x27;title&#x27;: &#x27;title2&#x27;, &#x27;description&#x27;: &#x27;description2&#x27;}, {&#x27;id&#x27;: &#x27;5057&#x27;, &#x27;title&#x27;: &#x27;title4&#x27;, &#x27;description&#x27;: &#x27;description4&#x27;}, {&#x27;id&#x27;: &#x27;5058&#x27;, &#x27;title&#x27;: &#x27;title5&#x27;, &#x27;description&#x27;: &#x27;description5&#x27;}, {&#x27;id&#x27;: &#x27;5056&#x27;, &#x27;title&#x27;: &#x27;title3&#x27;, &#x27;description&#x27;: &#x27;description3&#x27;}, {&#x27;id&#x27;: &#x27;5054&#x27;, &#x27;title&#x27;: &#x27;title1&#x27;, &#x27;description&#x27;: &#x27;description1&#x27;}]}
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&quot;categories&quot;:[{&quot;id&quot;:&quot;7&quot;,&quot;title&quot;:&quot;title5&quot;,&quot;description&quot;:&quot;description5&quot;},{&quot;id&quot;:&quot;5&quot;,&quot;title&quot;:&quot;title3&quot;,&quot;description&quot;:&quot;description3&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;title&quot;:&quot;title2&quot;,&quot;description&quot;:&quot;description2&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;title&quot;:&quot;title1&quot;,&quot;description&quot;:&quot;description1&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;title&quot;:&quot;title4&quot;,&quot;description&quot;:&quot;description4&quot;}]}
+{&#x27;categories&#x27;: [{&#x27;id&#x27;: &#x27;7&#x27;, &#x27;title&#x27;: &#x27;title5&#x27;, &#x27;description&#x27;: &#x27;description5&#x27;}, {&#x27;id&#x27;: &#x27;5&#x27;, &#x27;title&#x27;: &#x27;title3&#x27;, &#x27;description&#x27;: &#x27;description3&#x27;}, {&#x27;id&#x27;: &#x27;4&#x27;, &#x27;title&#x27;: &#x27;title2&#x27;, &#x27;description&#x27;: &#x27;description2&#x27;}, {&#x27;id&#x27;: &#x27;3&#x27;, &#x27;title&#x27;: &#x27;title1&#x27;, &#x27;description&#x27;: &#x27;description1&#x27;}, {&#x27;id&#x27;: &#x27;6&#x27;, &#x27;title&#x27;: &#x27;title4&#x27;, &#x27;description&#x27;: &#x27;description4&#x27;}]}
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_head_all_categories</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -527,7 +536,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_xml</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -545,7 +554,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_unknown_json_key</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -635,7 +644,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_title_and_description</td>
-          <td class="col-duration">0.08</td>
+          <td class="col-duration">0.07</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -653,7 +662,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_head_category_by_title_and_description</td>
-          <td class="col-duration">0.07</td>
+          <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -671,7 +680,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_put_update_category_not_found</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -707,7 +716,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_delete_category</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -716,7 +725,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_delete_category_not_found</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -725,7 +734,187 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/test_categories.py::TestCategoriesGet::test_delete_category_empty_path</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_create_project_undocumented_success</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_create_project_empty_body</td>
           <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_multiple</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_single</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_none</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_multiple</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_single</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_none</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_project_by_id</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_project_by_id_not_found</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_project_by_id</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_project_by_id_not_found</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_post_project_by_id</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_post_project_by_id_not_found</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_put_project_by_id</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_put_project_by_id_not_found</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_delete_project_by_id</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_delete_project_by_id_not_found</td>
+          <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -740,10 +929,10 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <td class="extra" colspan="4">
             <div class="log"> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 36, status code: 200
-delete todo with id: 37, status code: 200
-delete todo with id: 38, status code: 200
-delete todo with id: 35, status code: 200
+delete todo with id: 131, status code: 200
+delete todo with id: 128, status code: 200
+delete todo with id: 129, status code: 200
+delete todo with id: 130, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -756,18 +945,18 @@ delete todo with id: 35, status code: 200
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-{&#x27;id&#x27;: &#x27;39&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;40&#x27;, &#x27;title&#x27;: &#x27;Test2&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;second todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;43&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;41&#x27;, &#x27;title&#x27;: &#x27;Test3&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;third todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;42&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;136&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;135&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;132&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;134&#x27;, &#x27;title&#x27;: &#x27;Test3&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;third todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;133&#x27;, &#x27;title&#x27;: &#x27;Test2&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;second todo&#x27;}, status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 39, status code: 200
-delete todo with id: 40, status code: 200
-delete todo with id: 43, status code: 200
-delete todo with id: 41, status code: 200
-delete todo with id: 42, status code: 200
+delete todo with id: 136, status code: 200
+delete todo with id: 135, status code: 200
+delete todo with id: 132, status code: 200
+delete todo with id: 134, status code: 200
+delete todo with id: 133, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -775,19 +964,19 @@ delete todo with id: 42, status code: 200
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_title</td>
-          <td class="col-duration">0.04</td>
+          <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>n/
-[{&#x27;id&#x27;: &#x27;44&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}], status code: 200
+[{&#x27;id&#x27;: &#x27;137&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}], status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 44, status code: 200
-delete todo with id: 47, status code: 200
-delete todo with id: 45, status code: 200
-delete todo with id: 46, status code: 200
-delete todo with id: 48, status code: 200
+delete todo with id: 140, status code: 200
+delete todo with id: 137, status code: 200
+delete todo with id: 138, status code: 200
+delete todo with id: 139, status code: 200
+delete todo with id: 141, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -800,15 +989,15 @@ delete todo with id: 48, status code: 200
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-{&#x27;id&#x27;: &#x27;53&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;52&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;146&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;145&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 53, status code: 200
-delete todo with id: 51, status code: 200
-delete todo with id: 52, status code: 200
-delete todo with id: 50, status code: 200
-delete todo with id: 49, status code: 200
+delete todo with id: 143, status code: 200
+delete todo with id: 146, status code: 200
+delete todo with id: 145, status code: 200
+delete todo with id: 144, status code: 200
+delete todo with id: 142, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -820,14 +1009,14 @@ delete todo with id: 49, status code: 200
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;id&#x27;: &#x27;54&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;id&#x27;: &#x27;147&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 54, status code: 200
-delete todo with id: 55, status code: 200
-delete todo with id: 58, status code: 200
-delete todo with id: 57, status code: 200
-delete todo with id: 56, status code: 200
+delete todo with id: 148, status code: 200
+delete todo with id: 149, status code: 200
+delete todo with id: 151, status code: 200
+delete todo with id: 150, status code: 200
+delete todo with id: 147, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -842,12 +1031,12 @@ delete todo with id: 56, status code: 200
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>&lt;Response [201]&gt;
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 59, status code: 200
-delete todo with id: 61, status code: 200
-delete todo with id: 60, status code: 200
-delete todo with id: 62, status code: 200
-delete todo with id: 63, status code: 200
-delete todo with id: 64, status code: 200
+delete todo with id: 152, status code: 200
+delete todo with id: 157, status code: 200
+delete todo with id: 155, status code: 200
+delete todo with id: 154, status code: 200
+delete todo with id: 153, status code: 200
+delete todo with id: 156, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody></table></body></html>
