@@ -7,7 +7,7 @@ api_path = "/todos"
 headers = {"Content-Type": "application/json"}
 
 
-@pytest.mark.to_get
+@pytest.mark.todo
 class TestTodoPost:
 
     @pytest.fixture(autouse=True)
