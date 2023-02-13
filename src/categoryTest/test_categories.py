@@ -290,20 +290,17 @@ class TestCategoriesGet:
         id = request_data[0]["id"]
         response = requests.delete(url + f"/{id}")
         assert response.status_code == 200
+        assert requests.get(url + f"/{id}").status_code == 404
 
     def test_delete_category_not_found(self):
         response = requests.delete(url + "/999")
         assert response.status_code == 404
+        assert response.json().get("errorMessages") is not None
     
     def test_delete_category_empty_path(self):
         response = requests.delete(url)
         assert response.status_code == 405
-    
-    
-
-    
-
-    
+        
 
 if __name__ == "__main__":
     pytest.main()

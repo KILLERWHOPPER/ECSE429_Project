@@ -63,8 +63,8 @@ class TestCategoriesGet:
     def test_create_project_empty_body(self):
         response = requests.post(url)
         request_data = response.json()
-        # assert response.status_code == 400
-        # assert request_data.get("errorMessages") is not None
+        assert response.status_code == 400
+        assert request_data.get("errorMessages") is not None
 
     def test_get_projects(self):
         response = requests.get(url)
@@ -123,8 +123,8 @@ class TestCategoriesGet:
     def test_head_projects_with_filters_none(self):
         response = requests.head(url + "?title=title10&description=description10&completed=true&active=true")
         headers = response.headers
-        # assert response.status_code == 404
-        # assert headers.get("Content-Type") is None
+        assert response.status_code == 404
+        assert headers.get("Content-Type") is None
 
     def test_get_project_by_id(self):
         title, description = "new_title", "new_description"
@@ -162,8 +162,8 @@ class TestCategoriesGet:
     def test_head_project_by_id_not_found(self):
         response = requests.head(url + "/1000")
         headers = response.headers
-        # assert response.status_code == 404
-        # assert headers.get("Content-Type") is None
+        assert response.status_code == 404
+        assert headers.get("Content-Type") is None
 
     def test_post_project_by_id(self):
         response = requests.get(url)

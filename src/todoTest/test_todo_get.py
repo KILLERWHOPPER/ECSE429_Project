@@ -10,12 +10,11 @@ home = "http://localhost:4567"
 api_path = "/todos"
 headers = {"Content-Type": "application/json"}
 
-@pytest.mark.todo
+# @pytest.mark.todo
 class TestTodoGet:
 
     @pytest.fixture(autouse=True)
     def initialize(self):
-        # TODO: initialize test status
 
         data1 = {"title": "Test1", "doneStatus": False, "description": "first todo"}
         data2 = {"title": "Test2", "doneStatus": True, "description": "second todo"}
@@ -30,9 +29,7 @@ class TestTodoGet:
         requests.post(home + api_path, data=json.dumps(data4), headers=headers)
         requests.post(home + api_path, data=json.dumps(data5), headers=headers)
 
-
-
-        yield
+        yield # test runs here
 
         request = requests.get(url=home + api_path)
         response = request.json()

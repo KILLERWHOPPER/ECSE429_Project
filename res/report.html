@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 12-Feb-2023 at 00:39:34 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 12-Feb-2023 at 19:18:32 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -450,13 +450,13 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Windows-10-10.0.19044-SP0</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{"html": "3.2.0", "metadata": "2.0.4"}</td></tr>
+        <td>{"html": "3.2.0", "metadata": "2.0.4", "random-order": "1.1.0"}</td></tr>
       <tr>
         <td>Python</td>
         <td>3.10.6</td></tr></table>
     <h2>Summary</h2>
-    <p>56 tests ran in 3.50 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">53 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>103 tests ran in 8.28 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">87 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">16 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -470,54 +470,350 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_title_not_found</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x000001DD37A37B80&gt;<br/><br/>    def test_get_category_by_title_not_found(self):<br/>        new_title = &quot;new_title&quot;<br/>        response = requests.get(url + f&quot;?title={new_title}&quot;)<br/>        request_data = response.json().get(&quot;categories&quot;)<br/>        status_code = response.status_code<br/>&gt;       assert status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><br/>src\test_categories.py:168: AssertionError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_head_category_by_id_non_existing</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_category_by_title_not_found</td>
           <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x000001DD37A74100&gt;<br/><br/>    def test_head_category_by_id_non_existing(self):<br/>        get_response = requests.get(url + f&quot;/999&quot;)<br/>        assert get_response.status_code == 404<br/>        response = requests.head(url + f&quot;/999&quot;)<br/>        header_content_type = response.headers.get(&quot;Content-Type&quot;)<br/>&gt;       assert header_content_type is None<br/><span class="error">E       AssertionError: assert &#x27;application/json&#x27; is None</span><br/><br/>src\test_categories.py:207: AssertionError<br/></div></td></tr></tbody>
+            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x00000257945F4EB0&gt;<br/><br/>    def test_get_category_by_title_not_found(self):<br/>        new_title = &quot;new_title&quot;<br/>        response = requests.get(url + f&quot;?title={new_title}&quot;)<br/>        request_data = response.json().get(&quot;categories&quot;)<br/>        status_code = response.status_code<br/>&gt;       assert status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><br/>src\categoryTest\test_categories.py:169: AssertionError<br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_create_project_documented_fail</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_head_category_by_id_non_existing</td>
+          <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_projects.TestCategoriesGet object at 0x000001DD37A74A00&gt;<br/><br/>    def test_create_project_documented_fail(self):<br/>        # The json data formatting is the one shown in the documentation<br/>        data = {<br/>            &quot;title&quot;: &quot;epteur sint occaecat&quot;,<br/>            &quot;completed&quot;: &quot;true&quot;,<br/>            &quot;active&quot;: &quot;true&quot;,<br/>            &quot;description&quot;: &quot;e magna aliqua. Ut e&quot;<br/>        }<br/>        response = requests.post(url, json=data)<br/>        request_data = response.json()<br/>&gt;       assert response.status_code == 201<br/><span class="error">E       assert 400 == 201</span><br/><span class="error">E        +  where 400 = &lt;Response [400]&gt;.status_code</span><br/><br/>src\test_projects.py:41: AssertionError<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="log">self = &lt;test_categories.TestCategoriesGet object at 0x00000257945F5F00&gt;<br/><br/>    def test_head_category_by_id_non_existing(self):<br/>        get_response = requests.get(url + f&quot;/999&quot;)<br/>        assert get_response.status_code == 404<br/>        response = requests.head(url + f&quot;/999&quot;)<br/>        header_content_type = response.headers.get(&quot;Content-Type&quot;)<br/>&gt;       assert header_content_type is None<br/><span class="error">E       AssertionError: assert &#x27;application/json&#x27; is None</span><br/><br/>src\categoryTest\test_categories.py:208: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_all</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_create_project_documented_fail</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&quot;categories&quot;:[{&quot;id&quot;:&quot;7&quot;,&quot;title&quot;:&quot;title5&quot;,&quot;description&quot;:&quot;description5&quot;},{&quot;id&quot;:&quot;5&quot;,&quot;title&quot;:&quot;title3&quot;,&quot;description&quot;:&quot;description3&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;title&quot;:&quot;title2&quot;,&quot;description&quot;:&quot;description2&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;title&quot;:&quot;title1&quot;,&quot;description&quot;:&quot;description1&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;title&quot;:&quot;title4&quot;,&quot;description&quot;:&quot;description4&quot;}]}
-{&#x27;categories&#x27;: [{&#x27;id&#x27;: &#x27;7&#x27;, &#x27;title&#x27;: &#x27;title5&#x27;, &#x27;description&#x27;: &#x27;description5&#x27;}, {&#x27;id&#x27;: &#x27;5&#x27;, &#x27;title&#x27;: &#x27;title3&#x27;, &#x27;description&#x27;: &#x27;description3&#x27;}, {&#x27;id&#x27;: &#x27;4&#x27;, &#x27;title&#x27;: &#x27;title2&#x27;, &#x27;description&#x27;: &#x27;description2&#x27;}, {&#x27;id&#x27;: &#x27;3&#x27;, &#x27;title&#x27;: &#x27;title1&#x27;, &#x27;description&#x27;: &#x27;description1&#x27;}, {&#x27;id&#x27;: &#x27;6&#x27;, &#x27;title&#x27;: &#x27;title4&#x27;, &#x27;description&#x27;: &#x27;description4&#x27;}]}
+            <div class="log">self = &lt;test_projects.TestCategoriesGet object at 0x00000257945F7100&gt;<br/><br/>    def test_create_project_documented_fail(self):<br/>        # The json data formatting is the one shown in the documentation<br/>        data = {<br/>            &quot;title&quot;: &quot;epteur sint occaecat&quot;,<br/>            &quot;completed&quot;: &quot;true&quot;,<br/>            &quot;active&quot;: &quot;true&quot;,<br/>            &quot;description&quot;: &quot;e magna aliqua. Ut e&quot;<br/>        }<br/>        response = requests.post(url, json=data)<br/>        request_data = response.json()<br/>&gt;       assert response.status_code == 201<br/><span class="error">E       assert 400 == 201</span><br/><span class="error">E        +  where 400 = &lt;Response [400]&gt;.status_code</span><br/><br/>src\projectTest\test_projects.py:42: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_create_project_empty_body</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_projects.TestCategoriesGet object at 0x00000257945F63B0&gt;<br/><br/>    def test_create_project_empty_body(self):<br/>        response = requests.post(url)<br/>        request_data = response.json()<br/>&gt;       assert response.status_code == 400<br/><span class="error">E       assert 201 == 400</span><br/><span class="error">E        +  where 201 = &lt;Response [201]&gt;.status_code</span><br/><br/>src\projectTest\test_projects.py:66: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_none</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_projects.TestCategoriesGet object at 0x00000257945F7880&gt;<br/><br/>    def test_head_projects_with_filters_none(self):<br/>        response = requests.head(url + &quot;?title=title10&amp;description=description10&amp;completed=true&amp;active=true&quot;)<br/>        headers = response.headers<br/>&gt;       assert response.status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>src\projectTest\test_projects.py:126: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_head_project_by_id_not_found</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_projects.TestCategoriesGet object at 0x00000257945F7DC0&gt;<br/><br/>    def test_head_project_by_id_not_found(self):<br/>        response = requests.head(url + &quot;/1000&quot;)<br/>        headers = response.headers<br/>        assert response.status_code == 404<br/>&gt;       assert headers.get(&quot;Content-Type&quot;) is None<br/><span class="error">E       AssertionError: assert &#x27;application/json&#x27; is None</span><br/><span class="error">E        +  where &#x27;application/json&#x27; = &lt;bound method Mapping.get of {&#x27;Date&#x27;: &#x27;Mon, 13 Feb 2023 00:18:26 GMT&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Transfer-Encoding&#x27;: &#x27;chunked&#x27;, &#x27;Server&#x27;: &#x27;Jetty(9.4.z-SNAPSHOT)&#x27;}&gt;(&#x27;Content-Type&#x27;)</span><br/><span class="error">E        +    where &lt;bound method Mapping.get of {&#x27;Date&#x27;: &#x27;Mon, 13 Feb 2023 00:18:26 GMT&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Transfer-Encoding&#x27;: &#x27;chunked&#x27;, &#x27;Server&#x27;: &#x27;Jetty(9.4.z-SNAPSHOT)&#x27;}&gt; = {&#x27;Date&#x27;: &#x27;Mon, 13 Feb 2023 00:18:26 GMT&#x27;, &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Transfer-Encoding&#x27;: &#x27;chunked&#x27;, &#x27;Server&#x27;: &#x27;Jetty(9.4.z-SNAPSHOT)&#x27;}.get</span><br/><br/>src\projectTest\test_projects.py:166: AssertionError<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_relation_tasksof_todo_id_non_exist</td>
+          <td class="col-duration">0.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_delete.TestTodoDelete object at 0x0000025794628A90&gt;<br/><br/>    def test_delete_relation_tasksof_todo_id_non_exist(self):<br/>        projid = requests.get(url=home + &quot;/projects?title=testProject&quot;).json()[&quot;projects&quot;][0][&quot;id&quot;]<br/>    <br/>        request = requests.delete(url=home + api_path + &quot;/114514&quot; + &quot;/tasksof/&quot; + format(projid))<br/>    <br/>        assert request.status_code == 404 or 400<br/>&gt;       assert request.json()[&quot;errorMessages&quot;][0] == &quot;Could not find any instances with todos/114514/&quot;+format(projid)<br/><span class="error">E       AssertionError: assert &#x27;java.lang.Nu...nterException&#x27; == &#x27;Could not fi...dos/114514/95&#x27;</span><br/><span class="error">E         - Could not find any instances with todos/114514/95</span><br/><span class="error">E         + java.lang.NullPointerException</span><br/><br/>src\todoTest\test_todo_delete.py:116: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 25, status code: 200
+delete todo with id: 23, status code: 200
+delete todo with id: 24, status code: 200
+delete todo with id: 26, status code: 200
+delete todo with id: 27, status code: 200
+delete category with id: 172, status code: 200
+delete project with id: 95, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_relation_tasksof_project_id_non_exist</td>
+          <td class="col-duration">0.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_delete.TestTodoDelete object at 0x0000025794628BE0&gt;<br/><br/>    def test_delete_relation_tasksof_project_id_non_exist(self):<br/>        id = requests.get(url=home + api_path + &quot;?title=Test1&quot;).json()[&quot;todos&quot;][0][&quot;id&quot;]<br/>    <br/>        request = requests.delete(url=home + api_path + format(id) + &quot;/tasksof/114514&quot;)<br/>    <br/>        assert request.status_code == 404 or 400<br/>&gt;       assert len(request.content)!=0<br/><span class="error">E       AssertionError: assert 0 != 0</span><br/><span class="error">E        +  where 0 = len(b&#x27;&#x27;)</span><br/><span class="error">E        +    where b&#x27;&#x27; = &lt;Response [404]&gt;.content</span><br/><br/>src\todoTest\test_todo_delete.py:124: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 29, status code: 200
+delete todo with id: 31, status code: 200
+delete todo with id: 28, status code: 200
+delete todo with id: 32, status code: 200
+delete todo with id: 30, status code: 200
+delete category with id: 173, status code: 200
+delete project with id: 96, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_relation_categories_todo_id_non_exist</td>
+          <td class="col-duration">0.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_delete.TestTodoDelete object at 0x0000025794628D30&gt;<br/><br/>    def test_delete_relation_categories_todo_id_non_exist(self):<br/>        catid = requests.get(url=home + &quot;/categories?title=testCategory&quot;).json()[&quot;categories&quot;][0][&quot;id&quot;]<br/>    <br/>        request = requests.delete(url=home + api_path + &quot;/114514&quot; + &quot;/categories/&quot; + format(catid))<br/>    <br/>        assert request.status_code == 404 or 400<br/>&gt;       assert request.json()[&quot;errorMessages&quot;][0] == &quot;Could not find any instances with todos/114514&quot;<br/><span class="error">E       AssertionError: assert &#x27;java.lang.Nu...nterException&#x27; == &#x27;Could not fi... todos/114514&#x27;</span><br/><span class="error">E         - Could not find any instances with todos/114514</span><br/><span class="error">E         + java.lang.NullPointerException</span><br/><br/>src\todoTest\test_todo_delete.py:132: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 36, status code: 200
+delete todo with id: 37, status code: 200
+delete todo with id: 34, status code: 200
+delete todo with id: 33, status code: 200
+delete todo with id: 35, status code: 200
+delete category with id: 174, status code: 200
+delete project with id: 97, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_relation_categories_category_id_non_exist</td>
+          <td class="col-duration">0.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_delete.TestTodoDelete object at 0x0000025794628E80&gt;<br/><br/>    def test_delete_relation_categories_category_id_non_exist(self):<br/>        id = requests.get(url=home + api_path + &quot;?title=Test1&quot;).json()[&quot;todos&quot;][0][&quot;id&quot;]<br/>    <br/>        request = requests.delete(url=home + api_path + format(id) + &quot;/categories/114514&quot;)<br/>    <br/>        assert request.status_code == 404 or 400<br/>&gt;       assert len(request.content)!=0<br/><span class="error">E       AssertionError: assert 0 != 0</span><br/><span class="error">E        +  where 0 = len(b&#x27;&#x27;)</span><br/><span class="error">E        +    where b&#x27;&#x27; = &lt;Response [404]&gt;.content</span><br/><br/>src\todoTest\test_todo_delete.py:140: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 40, status code: 200
+delete todo with id: 39, status code: 200
+delete todo with id: 38, status code: 200
+delete todo with id: 41, status code: 200
+delete todo with id: 42, status code: 200
+delete category with id: 175, status code: 200
+delete project with id: 98, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_taskof_todo_non_exist</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_get.TestTodoGet object at 0x0000025794628A60&gt;<br/><br/>    def test_get_taskof_todo_non_exist(self):<br/>        request = requests.get(url=home + api_path + &quot;/114514/tasksof&quot;)<br/>    <br/>&gt;       assert request.status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>src\todoTest\test_todo_get.py:137: AssertionError<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 83, status code: 200
+delete todo with id: 86, status code: 200
+delete todo with id: 85, status code: 200
+delete todo with id: 84, status code: 200
+delete todo with id: 87, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_title_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_head.TestTodoPost object at 0x000002579462A9E0&gt;<br/><br/>    def test_head_title_not_exist(self):<br/>        response = requests.head(url=home + api_path + &quot;?title=notExist&quot;)<br/>    <br/>        assert response.headers.get(&quot;Content-Type&quot;) == &quot;application/json&quot;<br/>&gt;       assert response.status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>src\todoTest\test_todo_head.py:131: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 130, status code: 200
+delete todo with id: 128, status code: 200
+delete todo with id: 131, status code: 200
+delete todo with id: 129, status code: 200
+delete todo with id: 132, status code: 200
+delete category with id: 184, status code: 200
+delete project with id: 107, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_tasksof_project_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_head.TestTodoPost object at 0x000002579462ADD0&gt;<br/><br/>    def test_head_tasksof_project_not_exist(self):<br/>        response = requests.head(url=home + api_path + &quot;/1&quot;, data=json.dumps({&quot;id&quot;: 114514}), headers=headers)<br/>    <br/>        assert response.headers.get(&quot;Content-Type&quot;) == &quot;application/json&quot;<br/>&gt;       assert response.status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>src\todoTest\test_todo_head.py:149: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 143, status code: 200
+delete todo with id: 145, status code: 200
+delete todo with id: 147, status code: 200
+delete todo with id: 146, status code: 200
+delete todo with id: 144, status code: 200
+delete category with id: 187, status code: 200
+delete project with id: 110, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_category_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_head.TestTodoPost object at 0x000002579462ADA0&gt;<br/><br/>    def test_head_category_not_exist(self):<br/>        response = requests.head(url=home + api_path + &quot;/1&quot;, data=json.dumps({&quot;id&quot;: 114514}), headers=headers)<br/>    <br/>        assert response.headers.get(&quot;Content-Type&quot;) == &quot;application/json&quot;<br/>&gt;       assert response.status_code == 404<br/><span class="error">E       assert 200 == 404</span><br/><span class="error">E        +  where 200 = &lt;Response [200]&gt;.status_code</span><br/><br/>src\todoTest\test_todo_head.py:167: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 160, status code: 200
+delete todo with id: 162, status code: 200
+delete todo with id: 159, status code: 200
+delete todo with id: 161, status code: 200
+delete todo with id: 158, status code: 200
+delete category with id: 190, status code: 200
+delete project with id: 113, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_tasksof_project_unknown_field</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_post.TestTodoPost object at 0x00000257946601C0&gt;<br/><br/>    def test_post_add_tasksof_project_unknown_field(self):<br/>        id = requests.get(url=home + api_path + &quot;?title=Test1&quot;).json()[&quot;todos&quot;][0][&quot;id&quot;]<br/>        # projid = requests.get(url=home + &quot;/projects?title=Office Work&quot;).json()[&quot;projects&quot;][0][&quot;id&quot;]<br/>        response = requests.post(url=home + api_path + &quot;/&quot; + format(id) + &quot;/tasksof&quot;, data=json.dumps({&quot;unknownField&quot;: &quot;unknown&quot;}),<br/>                                 headers=headers)<br/>    <br/>        status_code = response.status_code<br/>        assert status_code == 400<br/>&gt;       assert response.json()[&quot;errorMessages&quot;] == [&quot;Unknown field&quot;]<br/><span class="error">E       AssertionError: assert [&#x27;java.lang.N...terException&#x27;] == [&#x27;Unknown field&#x27;]</span><br/><span class="error">E         At index 0 diff: &#x27;java.lang.NullPointerException&#x27; != &#x27;Unknown field&#x27;</span><br/><span class="error">E         Use -v to get more diff</span><br/><br/>src\todoTest\test_todo_post.py:199: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 226, status code: 200
+delete todo with id: 227, status code: 200
+delete todo with id: 228, status code: 200
+delete todo with id: 229, status code: 200
+delete todo with id: 230, status code: 200
+delete category with id: 203, status code: 200
+delete project with id: 126, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_category_unknown_field</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;test_todo_post.TestTodoPost object at 0x00000257946605B0&gt;<br/><br/>    def test_post_add_category_unknown_field(self):<br/>        id = requests.get(url=home + api_path + &quot;?title=Test1&quot;).json()[&quot;todos&quot;][0][&quot;id&quot;]<br/>        response = requests.post(url=home + api_path + &quot;/&quot; + format(id) + &quot;/categories&quot;,<br/>                                 data=json.dumps({&quot;unknownField&quot;: &quot;unknown&quot;}),<br/>                                 headers=headers)<br/>    <br/>        status_code = response.status_code<br/>        assert status_code == 400<br/>&gt;       assert response.json()[&quot;errorMessages&quot;] == [&quot;Unknown field&quot;]<br/><span class="error">E       AssertionError: assert [&#x27;java.lang.N...terException&#x27;] == [&#x27;Unknown field&#x27;]</span><br/><span class="error">E         At index 0 diff: &#x27;java.lang.NullPointerException&#x27; != &#x27;Unknown field&#x27;</span><br/><span class="error">E         Use -v to get more diff</span><br/><br/>src\todoTest\test_todo_post.py:227: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 243, status code: 200
+delete todo with id: 242, status code: 200
+delete todo with id: 244, status code: 200
+delete todo with id: 245, status code: 200
+delete todo with id: 241, status code: 200
+delete category with id: 206, status code: 200
+delete project with id: 129, status code: 200
+=================================================
+
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_head_all_categories</td>
-          <td class="col-duration">0.04</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_all</td>
+          <td class="col-duration">0.17</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&quot;categories&quot;:[{&quot;id&quot;:&quot;5&quot;,&quot;title&quot;:&quot;title3&quot;,&quot;description&quot;:&quot;description3&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;title&quot;:&quot;title1&quot;,&quot;description&quot;:&quot;description1&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;title&quot;:&quot;title2&quot;,&quot;description&quot;:&quot;description2&quot;},{&quot;id&quot;:&quot;7&quot;,&quot;title&quot;:&quot;title5&quot;,&quot;description&quot;:&quot;description5&quot;},{&quot;id&quot;:&quot;1&quot;,&quot;title&quot;:&quot;Office&quot;,&quot;description&quot;:&quot;&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;title&quot;:&quot;title4&quot;,&quot;description&quot;:&quot;description4&quot;},{&quot;id&quot;:&quot;2&quot;,&quot;title&quot;:&quot;Home&quot;,&quot;description&quot;:&quot;&quot;}]}
+{&#x27;categories&#x27;: [{&#x27;id&#x27;: &#x27;5&#x27;, &#x27;title&#x27;: &#x27;title3&#x27;, &#x27;description&#x27;: &#x27;description3&#x27;}, {&#x27;id&#x27;: &#x27;3&#x27;, &#x27;title&#x27;: &#x27;title1&#x27;, &#x27;description&#x27;: &#x27;description1&#x27;}, {&#x27;id&#x27;: &#x27;4&#x27;, &#x27;title&#x27;: &#x27;title2&#x27;, &#x27;description&#x27;: &#x27;description2&#x27;}, {&#x27;id&#x27;: &#x27;7&#x27;, &#x27;title&#x27;: &#x27;title5&#x27;, &#x27;description&#x27;: &#x27;description5&#x27;}, {&#x27;id&#x27;: &#x27;1&#x27;, &#x27;title&#x27;: &#x27;Office&#x27;, &#x27;description&#x27;: &#x27;&#x27;}, {&#x27;id&#x27;: &#x27;6&#x27;, &#x27;title&#x27;: &#x27;title4&#x27;, &#x27;description&#x27;: &#x27;description4&#x27;}, {&#x27;id&#x27;: &#x27;2&#x27;, &#x27;title&#x27;: &#x27;Home&#x27;, &#x27;description&#x27;: &#x27;&#x27;}]}
+<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_head_all_categories</td>
           <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -526,16 +822,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_with_id</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_xml</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category</td>
           <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -544,7 +831,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_content_type_plain</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_with_id</td>
           <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -553,79 +840,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_unknown_json_key</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_missing_description</td>
-          <td class="col-duration">0.05</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_empty_description</td>
-          <td class="col-duration">0.05</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_missing_title</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_post_create_category_empty_title</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_id</td>
-          <td class="col-duration">0.05</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_id_not_found</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_id_invalid</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_title</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_xml</td>
           <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -634,7 +849,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_description</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_content_type_plain</td>
           <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -643,7 +858,79 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_get_category_by_title_and_description</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_unknown_json_key</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_missing_description</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_empty_description</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_missing_title</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_post_create_category_empty_title</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_category_by_id</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_category_by_id_not_found</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_category_by_id_invalid</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_category_by_title</td>
           <td class="col-duration">0.07</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -652,16 +939,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_head_category_by_id</td>
-          <td class="col-duration">0.05</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_head_category_by_title_and_description</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_category_by_description</td>
           <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -670,7 +948,16 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_put_update_category</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_get_category_by_title_and_description</td>
+          <td class="col-duration">0.07</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_head_category_by_id</td>
           <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -679,7 +966,25 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_put_update_category_not_found</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_head_category_by_title_and_description</td>
+          <td class="col-duration">0.07</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_put_update_category</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_put_update_category_not_found</td>
           <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -688,7 +993,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_put_update_category_empty_body</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_put_update_category_empty_body</td>
           <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -697,7 +1002,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_put_update_category_empty_title</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_put_update_category_empty_title</td>
           <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -706,7 +1011,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_put_update_category_empty_description</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_put_update_category_empty_description</td>
           <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -715,7 +1020,16 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_delete_category</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_delete_category</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_delete_category_not_found</td>
           <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -724,7 +1038,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_delete_category_not_found</td>
+          <td class="col-name">src/categoryTest/test_categories.py::TestCategoriesGet::test_delete_category_empty_path</td>
           <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -733,7 +1047,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_categories.py::TestCategoriesGet::test_delete_category_empty_path</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_create_project_undocumented_success</td>
           <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -742,8 +1056,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_create_project_undocumented_success</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_get_projects</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -751,8 +1065,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_create_project_empty_body</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_multiple</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -760,8 +1074,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_single</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -769,8 +1083,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_multiple</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_none</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -778,8 +1092,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_single</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_head_projects</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -787,8 +1101,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_projects_with_filters_none</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_multiple</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -796,8 +1110,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_single</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -805,8 +1119,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_multiple</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_get_project_by_id</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -814,8 +1128,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_single</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_get_project_by_id_not_found</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -823,8 +1137,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_projects_with_filters_none</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_head_project_by_id</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -832,8 +1146,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_project_by_id</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_post_project_by_id</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -841,8 +1155,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_get_project_by_id_not_found</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_post_project_by_id_not_found</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -850,8 +1164,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_project_by_id</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_put_project_by_id</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -859,8 +1173,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_head_project_by_id_not_found</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_put_project_by_id_not_found</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -868,8 +1182,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_post_project_by_id</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_delete_project_by_id</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -877,8 +1191,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_post_project_by_id_not_found</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/projectTest/test_projects.py::TestCategoriesGet::test_delete_project_by_id_not_found</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -886,53 +1200,119 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_put_project_by_id</td>
-          <td class="col-duration">0.06</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_by_id</td>
+          <td class="col-duration">0.11</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_put_project_by_id_not_found</td>
-          <td class="col-duration">0.05</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_delete_project_by_id</td>
-          <td class="col-duration">0.06</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/test_projects.py::TestCategoriesGet::test_delete_project_by_id_not_found</td>
-          <td class="col-duration">0.06</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete</td>
-          <td class="col-duration">0.05</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ----------------------------Captured stdout teardown---------------------------- <br/>
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 131, status code: 200
-delete todo with id: 128, status code: 200
-delete todo with id: 129, status code: 200
-delete todo with id: 130, status code: 200
+delete todo with id: 7, status code: 200
+delete todo with id: 4, status code: 200
+delete todo with id: 5, status code: 200
+delete todo with id: 6, status code: 200
+delete category with id: 168, status code: 200
+delete project with id: 91, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_relation_tasksof</td>
+          <td class="col-duration">0.12</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 11, status code: 200
+delete todo with id: 8, status code: 200
+delete todo with id: 10, status code: 200
+delete todo with id: 9, status code: 200
+delete todo with id: 12, status code: 200
+delete category with id: 169, status code: 200
+delete project with id: 92, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_relation_categories</td>
+          <td class="col-duration">0.12</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 14, status code: 200
+delete todo with id: 16, status code: 200
+delete todo with id: 13, status code: 200
+delete todo with id: 17, status code: 200
+delete todo with id: 15, status code: 200
+delete category with id: 170, status code: 200
+delete project with id: 93, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_delete.py::TestTodoDelete::test_delete_by_id_non_exist</td>
+          <td class="col-duration">0.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test1with category testCategory. status code: 201
+connect todo Test1with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 18, status code: 200
+delete todo with id: 22, status code: 200
+delete todo with id: 19, status code: 200
+delete todo with id: 20, status code: 200
+delete todo with id: 21, status code: 200
+delete category with id: 171, status code: 200
+delete project with id: 94, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -940,23 +1320,25 @@ delete todo with id: 130, status code: 200
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_all</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-{&#x27;id&#x27;: &#x27;136&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;135&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;132&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;134&#x27;, &#x27;title&#x27;: &#x27;Test3&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;third todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;133&#x27;, &#x27;title&#x27;: &#x27;Test2&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;second todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;43&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;47&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;2&#x27;, &#x27;title&#x27;: &#x27;file paperwork&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;&#x27;, &#x27;tasksof&#x27;: [{&#x27;id&#x27;: &#x27;1&#x27;}]}, status code: 200
+{&#x27;id&#x27;: &#x27;44&#x27;, &#x27;title&#x27;: &#x27;Test2&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;second todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;46&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;45&#x27;, &#x27;title&#x27;: &#x27;Test3&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;third todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;1&#x27;, &#x27;title&#x27;: &#x27;scan paperwork&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;&#x27;, &#x27;categories&#x27;: [{&#x27;id&#x27;: &#x27;1&#x27;}], &#x27;tasksof&#x27;: [{&#x27;id&#x27;: &#x27;1&#x27;}]}, status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 136, status code: 200
-delete todo with id: 135, status code: 200
-delete todo with id: 132, status code: 200
-delete todo with id: 134, status code: 200
-delete todo with id: 133, status code: 200
+delete todo with id: 43, status code: 200
+delete todo with id: 47, status code: 200
+delete todo with id: 44, status code: 200
+delete todo with id: 46, status code: 200
+delete todo with id: 45, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -964,19 +1346,19 @@ delete todo with id: 133, status code: 200
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_title</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>n/
-[{&#x27;id&#x27;: &#x27;137&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}], status code: 200
+[{&#x27;id&#x27;: &#x27;48&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}], status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 140, status code: 200
-delete todo with id: 137, status code: 200
-delete todo with id: 138, status code: 200
-delete todo with id: 139, status code: 200
-delete todo with id: 141, status code: 200
+delete todo with id: 49, status code: 200
+delete todo with id: 52, status code: 200
+delete todo with id: 51, status code: 200
+delete todo with id: 50, status code: 200
+delete todo with id: 48, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -984,20 +1366,20 @@ delete todo with id: 141, status code: 200
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_title_multi</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-{&#x27;id&#x27;: &#x27;146&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
-{&#x27;id&#x27;: &#x27;145&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;57&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;fifth todo&#x27;}, status code: 200
+{&#x27;id&#x27;: &#x27;56&#x27;, &#x27;title&#x27;: &#x27;Test4&#x27;, &#x27;doneStatus&#x27;: &#x27;true&#x27;, &#x27;description&#x27;: &#x27;fourth todo&#x27;}, status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 143, status code: 200
-delete todo with id: 146, status code: 200
-delete todo with id: 145, status code: 200
-delete todo with id: 144, status code: 200
-delete todo with id: 142, status code: 200
+delete todo with id: 57, status code: 200
+delete todo with id: 54, status code: 200
+delete todo with id: 56, status code: 200
+delete todo with id: 53, status code: 200
+delete todo with id: 55, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
@@ -1005,38 +1387,961 @@ delete todo with id: 142, status code: 200
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_id</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;id&#x27;: &#x27;147&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;id&#x27;: &#x27;58&#x27;, &#x27;title&#x27;: &#x27;Test1&#x27;, &#x27;doneStatus&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;first todo&#x27;}, status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
-delete todo with id: 148, status code: 200
-delete todo with id: 149, status code: 200
-delete todo with id: 151, status code: 200
-delete todo with id: 150, status code: 200
-delete todo with id: 147, status code: 200
+delete todo with id: 61, status code: 200
+delete todo with id: 60, status code: 200
+delete todo with id: 58, status code: 200
+delete todo with id: 59, status code: 200
+delete todo with id: 62, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_taskof</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>&lt;Response [201]&gt;
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;id&#x27;: &#x27;1&#x27;, &#x27;title&#x27;: &#x27;Office Work&#x27;, &#x27;completed&#x27;: &#x27;false&#x27;, &#x27;active&#x27;: &#x27;false&#x27;, &#x27;description&#x27;: &#x27;&#x27;, &#x27;tasks&#x27;: [{&#x27;id&#x27;: &#x27;1&#x27;}, {&#x27;id&#x27;: &#x27;2&#x27;}]}, status code: 200
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>
 ====================after each===================
+delete todo with id: 66, status code: 200
+delete todo with id: 67, status code: 200
+delete todo with id: 64, status code: 200
+delete todo with id: 65, status code: 200
+delete todo with id: 63, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_categories</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;id&#x27;: &#x27;1&#x27;, &#x27;title&#x27;: &#x27;Office&#x27;, &#x27;description&#x27;: &#x27;&#x27;}, status code: 200
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 72, status code: 200
+delete todo with id: 71, status code: 200
+delete todo with id: 69, status code: 200
+delete todo with id: 70, status code: 200
+delete todo with id: 68, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_id_not_exist</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 77, status code: 200
+delete todo with id: 76, status code: 200
+delete todo with id: 74, status code: 200
+delete todo with id: 75, status code: 200
+delete todo with id: 73, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_get.py::TestTodoGet::test_get_by_title_not_exist</td>
+          <td class="col-duration">0.04</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 79, status code: 200
+delete todo with id: 80, status code: 200
+delete todo with id: 81, status code: 200
+delete todo with id: 82, status code: 200
+delete todo with id: 78, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_all</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 91, status code: 200
+delete todo with id: 88, status code: 200
+delete todo with id: 89, status code: 200
+delete todo with id: 92, status code: 200
+delete todo with id: 90, status code: 200
+delete category with id: 176, status code: 200
+delete project with id: 99, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_by_title</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 94, status code: 200
+delete todo with id: 96, status code: 200
+delete todo with id: 97, status code: 200
+delete todo with id: 95, status code: 200
+delete todo with id: 93, status code: 200
+delete category with id: 177, status code: 200
+delete project with id: 100, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_by_id</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 99, status code: 200
+delete todo with id: 101, status code: 200
+delete todo with id: 102, status code: 200
+delete todo with id: 98, status code: 200
+delete todo with id: 100, status code: 200
+delete category with id: 178, status code: 200
+delete project with id: 101, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_tasksof_all</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 104, status code: 200
+delete todo with id: 107, status code: 200
+delete todo with id: 106, status code: 200
+delete todo with id: 103, status code: 200
+delete todo with id: 105, status code: 200
+delete category with id: 179, status code: 200
+delete project with id: 102, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_tasksof</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 112, status code: 200
+delete todo with id: 109, status code: 200
+delete todo with id: 110, status code: 200
+delete todo with id: 108, status code: 200
+delete todo with id: 111, status code: 200
+delete category with id: 180, status code: 200
+delete project with id: 103, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_category_all</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 114, status code: 200
+delete todo with id: 113, status code: 200
+delete todo with id: 117, status code: 200
+delete todo with id: 115, status code: 200
+delete todo with id: 116, status code: 200
+delete category with id: 181, status code: 200
+delete project with id: 104, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_category</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 118, status code: 200
+delete todo with id: 120, status code: 200
+delete todo with id: 119, status code: 200
+delete todo with id: 121, status code: 200
+delete todo with id: 122, status code: 200
+delete category with id: 182, status code: 200
+delete project with id: 105, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_id_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 123, status code: 200
+delete todo with id: 126, status code: 200
+delete todo with id: 125, status code: 200
+delete todo with id: 124, status code: 200
+delete todo with id: 127, status code: 200
+delete category with id: 183, status code: 200
+delete project with id: 106, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_tasksof_all_id_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 136, status code: 200
+delete todo with id: 135, status code: 200
+delete todo with id: 134, status code: 200
+delete todo with id: 137, status code: 200
+delete todo with id: 133, status code: 200
+delete category with id: 185, status code: 200
+delete project with id: 108, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_tasksof_todo_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 140, status code: 200
+delete todo with id: 138, status code: 200
+delete todo with id: 139, status code: 200
+delete todo with id: 142, status code: 200
+delete todo with id: 141, status code: 200
+delete category with id: 186, status code: 200
+delete project with id: 109, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_category_all_id_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 149, status code: 200
 delete todo with id: 152, status code: 200
-delete todo with id: 157, status code: 200
+delete todo with id: 148, status code: 200
+delete todo with id: 150, status code: 200
+delete todo with id: 151, status code: 200
+delete category with id: 188, status code: 200
+delete project with id: 111, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_head.py::TestTodoPost::test_head_category_todo_not_exist</td>
+          <td class="col-duration">0.12</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
 delete todo with id: 155, status code: 200
-delete todo with id: 154, status code: 200
 delete todo with id: 153, status code: 200
 delete todo with id: 156, status code: 200
+delete todo with id: 157, status code: 200
+delete todo with id: 154, status code: 200
+delete category with id: 189, status code: 200
+delete project with id: 112, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_new</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 168, status code: 200
+delete todo with id: 166, status code: 200
+delete todo with id: 164, status code: 200
+delete todo with id: 163, status code: 200
+delete todo with id: 167, status code: 200
+delete todo with id: 165, status code: 200
+delete category with id: 191, status code: 200
+delete project with id: 114, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_edit</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 173, status code: 200
+delete todo with id: 170, status code: 200
+delete todo with id: 171, status code: 200
+delete todo with id: 169, status code: 200
+delete todo with id: 172, status code: 200
+delete category with id: 192, status code: 200
+delete project with id: 115, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_taskof</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 175, status code: 200
+delete todo with id: 176, status code: 200
+delete todo with id: 174, status code: 200
+delete todo with id: 177, status code: 200
+delete todo with id: 178, status code: 200
+delete category with id: 193, status code: 200
+delete project with id: 116, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_category</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 180, status code: 200
+delete todo with id: 179, status code: 200
+delete todo with id: 182, status code: 200
+delete todo with id: 181, status code: 200
+delete todo with id: 183, status code: 200
+delete category with id: 194, status code: 200
+delete project with id: 117, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_new_unknown_field</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 187, status code: 200
+delete todo with id: 184, status code: 200
+delete todo with id: 188, status code: 200
+delete todo with id: 186, status code: 200
+delete todo with id: 185, status code: 200
+delete category with id: 195, status code: 200
+delete project with id: 118, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_new_no_title</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 192, status code: 200
+delete todo with id: 193, status code: 200
+delete todo with id: 194, status code: 200
+delete todo with id: 190, status code: 200
+delete todo with id: 191, status code: 200
+delete category with id: 196, status code: 200
+delete project with id: 119, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_edit_unknown_field</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 198, status code: 200
+delete todo with id: 200, status code: 200
+delete todo with id: 199, status code: 200
+delete todo with id: 196, status code: 200
+delete todo with id: 197, status code: 200
+delete category with id: 197, status code: 200
+delete project with id: 120, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_edit_no_change</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 204, status code: 200
+delete todo with id: 205, status code: 200
+delete todo with id: 203, status code: 200
+delete todo with id: 201, status code: 200
+delete todo with id: 202, status code: 200
+delete category with id: 198, status code: 200
+delete project with id: 121, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_edit_id_not_exist</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 206, status code: 200
+delete todo with id: 208, status code: 200
+delete todo with id: 209, status code: 200
+delete todo with id: 210, status code: 200
+delete todo with id: 207, status code: 200
+delete category with id: 199, status code: 200
+delete project with id: 122, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_taskof_already_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 214, status code: 200
+delete todo with id: 213, status code: 200
+delete todo with id: 212, status code: 200
+delete todo with id: 211, status code: 200
+delete todo with id: 215, status code: 200
+delete category with id: 200, status code: 200
+delete project with id: 123, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_tasksof_todo_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 217, status code: 200
+delete todo with id: 216, status code: 200
+delete todo with id: 218, status code: 200
+delete todo with id: 219, status code: 200
+delete todo with id: 220, status code: 200
+delete category with id: 201, status code: 200
+delete project with id: 124, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_tasksof_project_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 221, status code: 200
+delete todo with id: 223, status code: 200
+delete todo with id: 222, status code: 200
+delete todo with id: 224, status code: 200
+delete todo with id: 225, status code: 200
+delete category with id: 202, status code: 200
+delete project with id: 125, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_category_todo_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 233, status code: 200
+delete todo with id: 234, status code: 200
+delete todo with id: 232, status code: 200
+delete todo with id: 231, status code: 200
+delete todo with id: 235, status code: 200
+delete category with id: 204, status code: 200
+delete project with id: 127, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_post.py::TestTodoPost::test_post_add_category_not_exist</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 238, status code: 200
+delete todo with id: 240, status code: 200
+delete todo with id: 236, status code: 200
+delete todo with id: 237, status code: 200
+delete todo with id: 239, status code: 200
+delete category with id: 205, status code: 200
+delete project with id: 128, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_put.py::TestTodoPost::test_put_refresh</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 246, status code: 200
+delete todo with id: 248, status code: 200
+delete todo with id: 249, status code: 200
+delete todo with id: 247, status code: 200
+delete todo with id: 250, status code: 200
+delete category with id: 207, status code: 200
+delete project with id: 130, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_put.py::TestTodoPost::test_put_refresh_id_not_exist</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 252, status code: 200
+delete todo with id: 254, status code: 200
+delete todo with id: 253, status code: 200
+delete todo with id: 251, status code: 200
+delete todo with id: 255, status code: 200
+delete category with id: 208, status code: 200
+delete project with id: 131, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_put.py::TestTodoPost::test_put_refresh_no_title</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 256, status code: 200
+delete todo with id: 257, status code: 200
+delete todo with id: 258, status code: 200
+delete todo with id: 260, status code: 200
+delete todo with id: 259, status code: 200
+delete category with id: 209, status code: 200
+delete project with id: 132, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_put.py::TestTodoPost::test_put_refresh_unknown_field</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 261, status code: 200
+delete todo with id: 262, status code: 200
+delete todo with id: 265, status code: 200
+delete todo with id: 263, status code: 200
+delete todo with id: 264, status code: 200
+delete category with id: 210, status code: 200
+delete project with id: 133, status code: 200
+=================================================
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">src/todoTest/test_todo_put.py::TestTodoPost::test_put_refresh_unknown_field_with_title</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>connect todo Test3with category testCategory. status code: 201
+connect todo Test3with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test4with category testCategory. status code: 201
+connect todo Test4with project testProject. status code: 201
+connect todo Test2with category testCategory. status code: 201
+connect todo Test2with project testProject. status code: 201
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>
+====================after each===================
+delete todo with id: 266, status code: 200
+delete todo with id: 268, status code: 200
+delete todo with id: 269, status code: 200
+delete todo with id: 270, status code: 200
+delete todo with id: 267, status code: 200
+delete category with id: 211, status code: 200
+delete project with id: 134, status code: 200
 =================================================
 
 <br/></div></td></tr></tbody></table></body></html>

@@ -5,7 +5,7 @@ import json
 home = "http://localhost:4567"
 api_path = "/todos"
 headers = {"Content-Type": "application/json"}
-@pytest.mark.todo
+# @pytest.mark.todo
 class TestTodoDelete:
 
     # BeforeEach and AfterEach
